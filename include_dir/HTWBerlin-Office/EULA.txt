@@ -1,0 +1,107 @@
+CC-Lizenz für den kostenlosen Download und die unentgeltliche Nutzung der Schrift „HTWBerlin“
+
+
+Die Hochschule für Technik und Wirtschaft Berlin, vertreten durch den Präsidenten/die Präsidentin,
+Treskowallee 8, 10318 Berlin (im Folgenden: HTW Berlin) bietet die von Professor Jürgen Huber im
+Fachbereich Gestaltung und Kultur in Zusammenarbeit mit Malte Herok exklusiv für die HTW Berlin
+entworfene und gestaltete Schrift „HTWBerlin“ (im Folgenden auch: Schrift oder Font) zum
+kostenfreien Download von der Website der HTW Berlin sowie auf Anfrage beim Referat Presse- und
+Öffentlichkeitsarbeit der HTW Berlin zur unentgeltlichen Nutzung an.
+
+Soweit sich aus den hier stehenden Bedingungen nichts Anderes ergibt, übertragen wir Ihnen die nicht
+ausschließlichen Rechte zur Nutzung der Schrift nach Maßgabe der Creative Commons (CC) - Lizenz
+„Namensnennung - Nicht kommerziell - Keine Bearbeitungen 4.0. International“:
+
+Die Bedingungen dieser Lizenz gelten in Ergänzung zu den hier stehenden Bedingungen. Sie können die
+ergänzenden Lizenzbedingungen unter der folgenden URL nachlesen, speichern und/oder ausdrucken:
+
+https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+
+Eine Kurzfassung der Lizenzbedingungen in deutscher Sprache finden Sie unter der folgenden URL:
+
+https://creativecommons.org/licenses/by-nc-nd/4.0/deed.de
+
+Nach Maßgabe dieser Lizenzbedingungen dürfen Sie die angebotene Schrift teilen, d.h. die Schrift in
+jedwedem Format oder Medium vervielfältigen oder verbreiten, wenn Sie die folgenden Bedingungen einhalten:
+
+1. Sie müssen angemessene Urheber- oder Rechteangaben wie folgt machen:
+
+„Schrift: HTWBerlin by Jürgen Huber/Malte Herok“
+
+2. Sie dürfen die Schrift nicht zu kommerziellen Zwecken weiterveräußern.
+
+3. Sie dürfen die Schrift nicht bearbeiten und auch keine veränderte oder bearbeitete Fassung der
+Schrift verbreiten.
+
+
+1. Allgemeines
+
+1.1 Dieser verbindliche Lizenzvertrag sowie die in Bezug genommenen ergänzenden Lizenzbedingungen der
+CC-Lizenz BY-NC-ND 4.0 International regeln die Rechte und Pflichten zwischen der HTW Berlin und
+Ihnen sowie den Umfang der Ihnen eingeräumten Nutzungsrechte an den Fonts.
+
+1.2 Sie erkennen die Bedingungen dieser Lizenz als verbindliche Regelungen an, indem Sie dies vor dem
+Download der Fonts bestätigen oder den Ihnen in Gestalt einer zip-Datei zur Verfügung gestellten Font
+nutzen. Die Ihnen zur Verfügung gestellte Datei enthält die Lizenzbedingungen.
+
+1.3 Rechtsverbindlich sind die deutsche Version dieser Lizenz sowie die englische Version der in Bezug
+genommenen CC-Lizenzbedingungen BY-NC-ND 4.0 International. Vertragssprache ist deutsch.
+
+1.4 Ein Nutzungsvertrag nach Maßgabe der hier stehenden Bedingungen sowie der ergänzend in Bezug
+genommenen CC-Lizenzbedingungen kommt dadurch zu Stande, dass Sie die Schrift herunter laden bzw. bei
+Ihrer Anfrage per E-Mail, dass wir Ihnen die Schrift oder einen Link zum Download der Schrift zusenden,
+nachdem Sie uns gegenüber Ihr Einverständnis mit der Geltung dieser Lizenzbedingungen erklärt haben.
+
+1.5 Der Vertragstext wird nicht gespeichert und kann nach dem Download der Schrift nicht mehr
+zugänglich gemacht werden.
+
+1.6 Eingabefehler können Sie vor dem Herunterladen der Schrift über den Zurück-Button Ihres Browsers
+oder entsprechende Mausfunktionen korrigieren.
+
+
+2. Nutzungsumfang
+
+Die Nutzung der Schrift ist beschränkt auf hochschulinterne und hochschulöffentliche Zwecke, die in
+einem inhaltlichen und/oder organisatorischen Zusammenhang mit der HTW Berlin stehen.
+
+
+3. Nutzungsrechte
+
+Die jeweiligen Urheber-, Geschmacksmuster-, Schriftzeichen-, Leistungsschutz- und sonstige gewerblichen
+Schutzrechte an der gestalterischen Leistung der Fonts, an der technischen Programmierungsleistung der
+Font-Software und an den Waren, Kennzeichen, Marken und Geschäftsbezeichnungen verbleiben bei den
+jeweiligen Rechteinhabern und werden durch den kostenlosen Download der Fonts nicht berührt.
+
+
+4. Beschränkung der Nutzungsrechte
+
+
+Da Sie an der Schrift nur ein einfaches (nicht-ausschließliches), inhaltlich beschränktes Nutzungsrecht
+erwerben, ist es Ihnen insbesondere nicht gestattet, die Schrift im Ganzen oder Teile hiervon
+
+a) zu bearbeiten, d.h. die wesentlichen Merkmale der Fonts zur Erstellung eines neuen Fonts zu
+übernehmen;
+
+b) zu verändern oder umzugestalten;
+
+c) zu dekompilieren, d.h. lesbare Quellcodes zu erzeugen; die Dekompilierung zur Herstellung der
+Interoperabilität eines Computerprogramms mit anderen Programmen im Rahmen des § 69 e UrhG bleibt
+hiervon unberührt;
+
+d) zu disassemblieren, d.h. den Objektcode der Font-Software in lesbare Assemblersprache umzuwandeln;
+Handlungen im Rahmen von § 69 e UrhG sind zulässig;
+
+e) im Wege des Reverse Engineering zu bearbeiten; damit sind sämtliche Formen der Programmanalyse der
+Fonts gemeint, die nicht mit einem Dekompilieren der Fonts verbunden sind; Handlungen zum Zwecke der
+Herstellung der Kompatibilität von Programmen oder der Anpassung an geänderte Anforderungen an die Fonts
+im Rahmen des § 69 d UrhG sind zulässig;
+
+f) entgeltlich zu verbreiten, d.h. die Fonts der Öffentlichkeit gegen Entgelt anzubieten oder in
+Verkehr zu bringen; dies umfasst sämtliche Verbreitungshandlungen, wie z.B. die Vermietung, die Weitergabe,
+die Weiterveräußerung, das öffentliche Zugänglichmachen, z.B. in Online-Diensten, den Verkauf, die
+Erteilung von Unterlizenzen, die Untervermietung, etc. Zulässig sind hingegen Verbreitungshandlungen der
+mittels der Font-Software erstellten Dokumente im Rahmen dieser CC-Lizenz;
+
+g) umzubenennen.
+
+Stand: April 2016
