@@ -1,26 +1,22 @@
-# syntax=docker/dockerfile:1
-FROM alpine:3.21 AS final
+FROM fedora:latest AS final
 WORKDIR /app
 
-RUN --mount=type=cache,target=/var/cache/apk \
-    apk --update add \
+RUN dnf update -y && \
+    dnf install -y \
     curl \
-    tzdata \
     ffmpeg \
-    sqlite \
+    unzip \
     go \
-    nodejs \
-    pnpm
+    && dnf clean all
 
-RUN --mount=type=cache,target=/var/cache/apk \
-    apk --update add templ --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/
+RUN curl -fsSL https://bun.sh/install | bash
+ENV PATH="/root/.bun/bin:${PATH}"
 
-RUN curl -fsSL \
-    https://raw.githubusercontent.com/pressly/goose/master/install.sh |\
-    sh 
+RUN go install github.com/a-h/templ/cmd/templ@latest
+ENV PATH="/root/go/bin:${PATH}"
 
-COPY package.json package-lock.json ./
-RUN pnpm install
+COPY package.json bun.lock ./
+RUN bun install
 
 COPY go.mod go.sum ./
 RUN go mod download -x
@@ -28,14 +24,13 @@ RUN go mod download -x
 COPY . .
 
 RUN templ generate
-RUN pnpm exec tailwindcss -o include_dir/output.css -m
-RUN goose -dir=assets/migrations/ sqlite3 app.db up
+RUN bunx tailwindcss -i style.css -o include_dir/output.css -m
 
-# Expose the port that the application listens on.
 EXPOSE 8080
 
-RUN GOOS=linux go build -o /bin/server
+RUN go build -o /bin/server
 
 # What the container should run when it is started.
 ENTRYPOINT [ "/bin/server" ]
+
 
