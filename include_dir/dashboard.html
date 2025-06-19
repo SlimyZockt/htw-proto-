@@ -78,7 +78,7 @@
             </div>
 
             <div class="rounded gap-2 p-4 flex flex-col glass shadow">
-                <h2 class="text-lg font-bold">Timeline</h2>
+                <h2 class="font-semibold">Timeline</h2>
                 <ul class="timeline justify-center items-center">
                     <li>
                         <div class="timeline-end timeline-box btn glass shadow">Übung 1</div>
@@ -119,6 +119,71 @@
                         </div>
                     </li>
                 </ul>
+            </div>
+            <div class="rounded gap-4 p-4 flex flex-col glass shadow ">
+                <h2 class="font-semibold">Aktuelle Kurse</h2>
+                <fieldset class="fieldset flex p-4 shadow">
+                    <legend class="fieldset-legend">Suche</legend>
+                    <input type="text" placeholder="" class="input grow glass input-ghost" />
+                </fieldset>
+                <!-- <div class="flex flex-row"> -->
+                <!-- </div> -->
+                <ul class="list shadow">
+                    <li class="list-row flex flex-col">
+                        <div class="flex items-center justify-between grow">
+                            <div class="flex flex-col">
+                                <span>Mathematik</span>
+                                <span class="font-light italic text-xs">55%</span>
+                            </div>
+                            <button class="btn btn-primary">
+                                Starten
+                            </button>
+                        </div>
+                        <progress class="progress progress-primary" value="55" max="100"></progress>
+                    </li>
+
+                    <li class="list-row flex flex-col">
+                        <div class="flex items-center justify-between grow">
+                            <div class="flex flex-col">
+                                <span>Modellierung von Anwendungssystemen</span>
+                                <span class="font-light italic text-xs">35%</span>
+                            </div>
+                            <button class="btn btn-primary">
+                                Starten
+                            </button>
+                        </div>
+                        <progress class="progress progress-primary" value="35" max="100"></progress>
+                    </li>
+
+                    <li class="list-row flex flex-col">
+                        <div class="flex items-center justify-between grow">
+                            <div class="flex flex-col">
+                                <span>Geschäftsprozesse und betriebliche Anwendungen</span>
+                                <span class="font-light italic text-xs">78%</span>
+                            </div>
+                            <button class="btn btn-primary">
+                                Starten
+                            </button>
+                        </div>
+                        <progress class="progress progress-primary" value="78" max="100"></progress>
+                    </li>
+                </ul>
+                <div class="shadow p-4 flex flex-row justify-between">
+                    <select class="select select-sm max-w-fit select-ghost">
+                        <option selected>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <div class="join join-vertical lg:join-horizontal glass">
+                        <button class="btn btn-ghost btn-sm join-item">
+                            <span class="iconify tabler--arrow-left"></span>
+                        </button>
+                        <button class="btn btn-ghost btn-sm join-item">
+                            <span class="iconify tabler--arrow-right"></span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
