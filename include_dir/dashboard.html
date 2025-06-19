@@ -78,7 +78,14 @@
             </div>
 
             <div class="rounded gap-2 p-4 flex flex-col glass shadow">
-                <h2 class="font-semibold">Timeline</h2>
+                <div class="flex flex-row items-center justify-between">
+                    <h2 class="font-semibold">Timeline</h2>
+                    <select class="select select-sm select-ghost text-right">
+                        <option selected>Mathematik</option>
+                        <option>Modellierung von Anwendungssystemen</option>
+                        <option>Geschäftsprozesse und betriebliche Anwendungen</option>
+                    </select>
+                </div>
                 <ul class="timeline justify-center items-center">
                     <li>
                         <div class="timeline-end timeline-box btn glass shadow">Übung 1</div>
@@ -96,12 +103,12 @@
                         <hr class="bg-primary" />
                     </li>
                     <li>
-                        <hr class="bg-base-content/50" />
+                        <hr class="bg-primary" />
                         <div class="timeline-end timeline-box btn glass shadow">Übung 3</div>
                         <div class="timeline-middle">
-                            <span class="iconify tabler--circle-check-filled bg-base-content/50"></span>
+                            <span class="iconify tabler--circle-check-filled bg-primary"></span>
                         </div>
-                        <hr class="bg-base-content/50" />
+                        <hr class="bg-primary" />
                     </li>
                     <li>
                         <hr class="bg-base-content/50" />
@@ -169,13 +176,7 @@
                     </li>
                 </ul>
                 <div class="shadow p-4 flex flex-row justify-between">
-                    <select class="select select-sm max-w-fit select-ghost">
-                        <option selected>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select>
-                    <div class="join join-vertical lg:join-horizontal glass">
+                    <div class="join join-vertical lg:join-horizontal ">
                         <button class="btn btn-ghost btn-sm join-item">
                             <span class="iconify tabler--arrow-left"></span>
                         </button>
@@ -183,6 +184,12 @@
                             <span class="iconify tabler--arrow-right"></span>
                         </button>
                     </div>
+                    <select class="select select-sm max-w-fit select-ghost">
+                        <option selected>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
                 </div>
             </div>
         </div>
