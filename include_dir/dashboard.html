@@ -9,12 +9,12 @@
     <title>HTW Lern</title>
 </head>
 
-<body class="flex flex-col gap-2 m-0 p-0 min-h-screen from-[#e7f2d3] to-sky-200 bg-gradient-to-b">
-    <nav class="navbar glass">
+<body class="flex flex-col gap-0 m-0 p-0 min-h-screen from-primary/20 to-secondary/20 bg-gradient-to-br">
+    <header class="navbar glass shadow">
         <div class="flex-1">
             <a class="btn btn-ghost text-xl" href="dashboard.html">HTW Lern</a>
         </div>
-        <div class="flex-none">
+        <div class="flex-none flex gap-2">
             <a class="btn glass" href="dashboard.html">
                 <span class="iconify tabler--message"></span>
                 Chat
@@ -27,22 +27,98 @@
                 <span class="iconify tabler--calendar"></span>
                 Kalender
             </a>
+            <div class="bg-base-100/40 shadow skeleton h-10 w-10 shrink-0 rounded-full">
+            </div>
         </div>
-    </nav>
+    </header>
 
-    <div class="flex gap-2 flex-col p-4 ">
-        <div class=" rounded shrink gap-2 p-4 flex flex-col glass">
-            <h2 class="font-bold">Lernstreak</h2>
-            <div class="mt-6 flex justify-between">
-                <div class="flex flex-col">
-                    <span class="font-bold text-2xl">
-                        16 Tage
-                    </span>
-                    <span class="font-light text-xs">
-                        +2 seit letzter Woche
-                    </span>
+    <div class="flex flex-col p-4 gap-4">
+
+        <div role="alert" class="shrink alert alert-info text-secondary glass shadow gap-2">
+            <span class="iconify tabler--info-circle"></span>
+            <span>Du hast den Einstiegstest nicht gemacht!</span>
+            <div>
+                <button class="btn btn-sm btn-ghost text-base-content">Später</button>
+                <button class="btn btn-sm btn-primary">Starten</button>
+            </div>
+        </div>
+
+        <div class="flex gap-4 flex-col ">
+            <div class="rounded shrink gap-2 flex flex-col glass shadow">
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-figure text-secondary">
+                            <span class="iconify tabler--flame bg-accent"></span>
+                        </div>
+                        <div class="stat-title">
+                            <div class="stat-title">Lernstreak</div>
+                        </div>
+                        <div class="stat-value">16 Tage</div>
+                        <div class="stat-desc">+2 seit letzter Woche</div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="stat-figure text-secondary">
+                            <span class="iconify tabler--book"></span>
+                        </div>
+                        <div class="stat-title">Abgeschlossene Übungen</div>
+                        <div class="stat-value">60</div>
+                        <div class="stat-desc"> +10 diese Woche</div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="stat-figure text-secondary">
+                            <span class="iconify tabler--trophy"></span>
+                        </div>
+                        <div class="stat-title">Badges</div>
+                        <div class="stat-value">12</div>
+                        <div class="stat-desc">+1 diese Woche</div>
+                    </div>
                 </div>
-                <span class="iconify tabler--flame bg-accent"></span>
+            </div>
+
+            <div class="rounded gap-2 p-4 flex flex-col glass shadow">
+                <h2 class="text-lg font-bold">Timeline</h2>
+                <ul class="timeline justify-center items-center">
+                    <li>
+                        <div class="timeline-end timeline-box btn glass shadow">Übung 1</div>
+                        <div class="timeline-middle ">
+                            <span class="iconify tabler--circle-check-filled bg-primary"></span>
+                        </div>
+                        <hr class="bg-primary" />
+                    </li>
+                    <li>
+                        <hr class="bg-primary" />
+                        <div class="timeline-start timeline-box btn glass shadow">Übung 2</div>
+                        <div class="timeline-middle">
+                            <span class="iconify tabler--circle-check-filled bg-primary"></span>
+                        </div>
+                        <hr class="bg-primary" />
+                    </li>
+                    <li>
+                        <hr class="bg-base-content/50" />
+                        <div class="timeline-end timeline-box btn glass shadow">Übung 3</div>
+                        <div class="timeline-middle">
+                            <span class="iconify tabler--circle-check-filled bg-base-content/50"></span>
+                        </div>
+                        <hr class="bg-base-content/50" />
+                    </li>
+                    <li>
+                        <hr class="bg-base-content/50" />
+                        <div class="timeline-start timeline-box btn glass shadow">Übung 4</div>
+                        <div class="timeline-middle">
+                            <span class="iconify tabler--circle-check-filled bg-base-content/50"></span>
+                        </div>
+                        <hr class="bg-base-content/50" />
+                    </li>
+                    <li>
+                        <hr class="bg-base-content/50" />
+                        <div class="timeline-end timeline-box btn glass shadow">Test 1</div>
+                        <div class="timeline-middle">
+                            <span class="iconify tabler--circle-check-filled bg-base-content/50"></span>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
