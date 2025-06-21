@@ -1,0 +1,45 @@
+@define-color main-color #938AA9;
+@define-color second-color #1A1813;
+@define-color darker-second-color #0D0C0C;
+
+* {
+	font-family: JetBrainsMono Nerd Font;
+	min-height: 0px;
+	/* border: solid 3px @main-color; */
+	/* border-radius: 8px; */
+}
+
+window#waybar {
+	font-size: 16px;
+	color: @main-color;
+	background: linear-gradient(to bottom, rgba(30, 30, 30, 0.1), rgba(50, 50, 50, 0.1));
+	border-radius: 8px; 
+	border: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+button {
+	color: @main-color;
+	padding: 0;
+	margin: 0;
+	border-radius: 0px;
+}
+
+#workspaces {
+	margin: 10px 0px 10px 10px; 
+}
+
+#tray {
+	margin: 10px 10px 10px 0px; 
+}
+
+#workspaces button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+	background: @darker-second-color;
+}
+
+
+#workspaces button.active {
+	background: @main-color;
+	color: @second-color;
+}
