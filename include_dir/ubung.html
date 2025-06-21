@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="htw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <title>HTW Lern</title>
+</head>
+
+<body class="flex flex-col gap-0 m-0 p-0 min-h-screen from-primary/20 to-secondary/20 bg-gradient-to-br">
+    <header class="navbar glass shadow">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-xl" href="dashboard.html">HTW Lern</a>
+        </div>
+        <div class="flex-none flex gap-2">
+            <a class="btn glass" href="dashboard.html">
+                <span class="iconify tabler--dashboard"></span>
+                Dashboard
+            </a>
+            <!-- <a class="btn glass" href="ubungen.html"> -->
+            <!--     <span class="iconify tabler--book"></span> -->
+            <!--     Übungen -->
+            <!-- </a> -->
+            <!-- <a class="btn glass" href="kalender.html"> -->
+            <!--     <span class="iconify tabler--calendar"></span> -->
+            <!--     Kalender -->
+            <!-- </a> -->
+            <div class="bg-base-100/40 shadow skeleton h-10 w-10 shrink-0 rounded-full">
+            </div>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-[auto_16fr] p-4 gap-4 grow">
+        <div class="rounded gap-2 p-4 flex flex-col glass shadow overflow-x-hidden">
+            <button class="btn btn-primary">Neuer Chat</button>
+            <div class="flex items-center">
+                <span class="iconify tabler--search"></span>
+                <input type="text" placeholder="Suche nach ein Tread" class="input input-ghost " />
+
+            </div>
+            <hr class="border-primary-content">
+            <div class="flex flex-col gap-2 overflow-x-hidden grow">
+                <button class="btn btn-ghost glass">Mathematik I</button>
+                <button class="btn btn-ghost ">
+                    <span class="truncate">
+                        Brechung von Transponierte Matrix
+                    </span>
+                </button>
+                <button class="btn btn-ghost">Teste Chat Funktion</button>
+            </div>
+        </div>
+        <div class="p-4 flex flex-col rounded glass shadow ">
+            <div class="grow">
+                <div class="chat chat-end">
+                    <div class="chat">
+                        <div class="chat-bubble chat-bubble-secondary">
+                            Fasse den Inhalt von Mathematik I zusammen.
+                        </div>
+                    </div>
+                </div>
+                <div class="chat chat-start ">
+                    <div class="">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                        sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                        justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+                        ipsum dolor sit amet.
+                    </div>
+                </div>
+            </div>
+            <div class="shrink flex flex-col bg-base-100/20 shadow p-4 rounded">
+                <input type="text" placeholder="Schreibe deine Nachricht hier..."
+                    class="input input-ghost grow w-full" />
+                <div class="grow flex flex-row justify-between">
+                    <select class="select select-sm select-ghost shrink w-3xs">
+                        <option></option>
+                        <option selected>Mathematik</option>
+                        <option>Modellierung von Anwendungssystemen</option>
+                        <option>Geschäftsprozesse und betriebliche Anwendungen</option>
+                    </select>
+                    <div class="grow flex flex-row justify-end">
+                        <button class="btn btn-primary items-center">
+                            <span class="iconify tabler--send"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
