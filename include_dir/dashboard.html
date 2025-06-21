@@ -19,14 +19,6 @@
                 <span class="iconify tabler--message"></span>
                 Chat
             </a>
-            <!-- <a class="btn glass" href="ubungen.html"> -->
-            <!--     <span class="iconify tabler--book"></span> -->
-            <!--     Übungen -->
-            <!-- </a> -->
-            <!-- <a class="btn glass" href="kalender.html"> -->
-            <!--     <span class="iconify tabler--calendar"></span> -->
-            <!--     Kalender -->
-            <!-- </a> -->
             <div class="bg-base-100/40 shadow skeleton h-10 w-10 shrink-0 rounded-full">
             </div>
         </div>
@@ -34,12 +26,13 @@
 
     <div class="flex flex-col p-4 gap-4">
 
-        <div role="alert" class="shrink alert alert-info text-secondary glass shadow gap-2">
+        <div role="alert" class="shrink alert alert-info text-secondary glass shadow gap-2" id="alert">
             <span class="iconify tabler--info-circle"></span>
             <span>Du hast den Einstiegstest nicht gemacht!</span>
             <div>
-                <button class="btn btn-sm btn-ghost text-base-content">Später</button>
-                <button class="btn btn-sm btn-primary">Starten</button>
+                <button class="btn btn-sm btn-ghost text-base-content" hx-trigger="click" hx-target="#alert"
+                    hx-swap="delete" hx-get="/del">Später</button>
+                <a class="btn btn-sm btn-primary" href="test.html">Starten</a>
             </div>
         </div>
 

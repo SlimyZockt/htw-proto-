@@ -14,8 +14,8 @@ func main() {
 	router := http.NewServeMux()
 
 	router.Handle("/", http.FileServer(http.Dir("include_dir")))
-	router.HandleFunc("/welcome", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintln(w, "Hello")
+	router.HandleFunc("/del", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintln(w, "")
 	})
 
 	log.Println("Starting Server at :8080")
