@@ -1,5 +1,55 @@
 package template
 
+import "strconv"
+
 templ Test() {
 	<p class="">Hello fro GO</p>
+}
+
+type Anwser struct {
+	Ok      bool
+	Content string
+}
+
+type QuizMC struct {
+	Awnsers  []Anwser
+	Question string
+}
+
+templ MC(quiz []QuizMC, id int) {
+	<div class="card-body grow" id="quiz">
+		<h2 class="card-title justify-between">
+			<div>
+				{ quiz[id-1].Question }
+			</div>
+			<div>
+				{ id } / { len(quiz) }
+			</div>
+		</h2>
+		<ul class="list grow">
+			for _, anwser := range quiz[id-1].Awnsers {
+				<li class="list-row flex flex-row ">
+					<div class="grow">{ anwser.Content }</div>
+					<input type="checkbox" class="input checkbox"/>
+				</li>
+			}
+		</ul>
+		<div class="card-actions justify-end">
+			<button class="btn btn-ghost shadow glass ">Zurück</button>
+			if id == len(quiz) {
+				<a
+					href="/dashboard.html"
+					class="btn btn-primary"
+				>Weiter</a>
+			} else {
+				<button
+					class="btn btn-primary"
+					hx-trigger="click"
+					hx-swap="outerHTML"
+					hx-target="#quiz"
+					hx-get={ "intro/" + strconv.Itoa(id+1) }
+				>Weiter</button>
+			}
+		</div>
+	</div>
 }
