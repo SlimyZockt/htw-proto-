@@ -32,7 +32,9 @@
             <div>
                 <button class="btn btn-sm btn-ghost text-base-content" hx-trigger="click" hx-target="#alert"
                     hx-swap="delete" hx-get="/del">Später</button>
-                <a class="btn btn-sm btn-primary" href="test.html">Starten</a>
+
+                <button class="btn btn-primary" hx-get="/ubung/intro/1" hx-swap="none" hx-trigger="click">
+                    Starten</button>
             </div>
         </div>
 
@@ -126,8 +128,6 @@
                     <legend class="fieldset-legend">Suche</legend>
                     <input type="text" placeholder="" class="input grow glass input-ghost" />
                 </fieldset>
-                <!-- <div class="flex flex-row"> -->
-                <!-- </div> -->
                 <ul class="list shadow">
                     <li class="list-row flex flex-col">
                         <div class="flex items-center justify-between grow">
@@ -135,7 +135,7 @@
                                 <span>Mathematik</span>
                                 <span class="font-light italic text-xs">55%</span>
                             </div>
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" hx-get="/ubung/mathematik/4" hx-swap="none">
                                 Weiter
                             </button>
                         </div>
@@ -148,7 +148,7 @@
                                 <span>Modellierung von Anwendungssystemen</span>
                                 <span class="font-light italic text-xs">35%</span>
                             </div>
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" hx-get="/ubung/mas/3" hx-swap="none">
                                 Weiter
                             </button>
                         </div>
@@ -161,7 +161,7 @@
                                 <span>Geschäftsprozesse und betriebliche Anwendungen</span>
                                 <span class="font-light italic text-xs">0%</span>
                             </div>
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" hx-get="/ubung/bean/1" hx-swap="none">
                                 Starten
                             </button>
                         </div>
@@ -169,7 +169,7 @@
                     </li>
                 </ul>
                 <div class="shadow p-4 flex flex-row justify-between">
-                    <div class="join join-vertical lg:join-horizontal ">
+                    <div class="join join-horizontal">
                         <button class="btn btn-ghost btn-sm join-item">
                             <span class="iconify tabler--arrow-left"></span>
                         </button>

@@ -16,16 +16,16 @@ type QuizMC struct {
 	Question string
 }
 
-templ MC(quiz []QuizMC, id int) {
+templ MC(quiz []QuizMC, id int, name string) {
 	<div class="card-body grow" id="quiz">
-		<h2 class="card-title justify-between">
-			<div>
+		<div class="card-title justify-between">
+			<h2>
 				{ quiz[id-1].Question }
-			</div>
-			<div>
+			</h2>
+			<span class="min-w-fit">
 				{ id } / { len(quiz) }
-			</div>
-		</h2>
+			</span>
+		</div>
 		<ul class="list grow">
 			for _, anwser := range quiz[id-1].Awnsers {
 				<li class="list-row flex flex-row ">
@@ -35,7 +35,15 @@ templ MC(quiz []QuizMC, id int) {
 			}
 		</ul>
 		<div class="card-actions justify-end">
-			<button class="btn btn-ghost shadow glass ">Zurück</button>
+			if id > 1 {
+				<button
+					class="btn btn-ghost glass"
+					hx-trigger="click"
+					hx-swap="outerHTML"
+					hx-target="#quiz"
+					hx-get={ "ubung/" + name + "/" + strconv.Itoa(id-1) }
+				>Zurück</button>
+			}
 			if id == len(quiz) {
 				<a
 					href="/dashboard.html"
@@ -47,7 +55,7 @@ templ MC(quiz []QuizMC, id int) {
 					hx-trigger="click"
 					hx-swap="outerHTML"
 					hx-target="#quiz"
-					hx-get={ "intro/" + strconv.Itoa(id+1) }
+					hx-get={ "ubung/" + name + "/" + strconv.Itoa(id+1) }
 				>Weiter</button>
 			}
 		</div>
