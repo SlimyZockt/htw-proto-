@@ -233,6 +233,11 @@ func main() {
 			w.Header().Add("Hx-Redirect", "/dashboard.html")
 			return
 		}
+
+		if currentQuiz == "intro" {
+			template.KalibrungFeedback().Render(context.TODO(), w)
+			return
+		}
 		template.Feedback(currentQuiz, len(quiz[currentQuiz])).Render(context.TODO(), w)
 	})
 

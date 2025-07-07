@@ -69,7 +69,7 @@ templ Feedback(name string, quiz_len int) {
 		<div class="card-body flex flex-col">
 			<div class="flex flex-col gap-2">
 				<p class="text-xl font-semibold text-primary">
-					Glückwunsch! Du hast alle 5/5 Fragen richtig beantwortet! 🎉
+					Glückwunsch! Du hast alle { quiz_len }/{ quiz_len } Fragen richtig beantwortet! 🎉
 				</p>
 				<p class=" text-md">
 					Eine hervorragende Leistung! Du hast gezeigt, dass du die Konzepte
@@ -84,11 +84,45 @@ templ Feedback(name string, quiz_len int) {
 				<p class="leading-relaxed grow">
 					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 				</p>
-				<p class="text-sm text-neutral-500 font-light italic flex-none">
-					(Dies ist eine automatisch generierte Zusammenfassung basierend auf
-					deinen Antworten.)
-				</p>
 			</section>
+			<a
+				href="/dashboard.html"
+				class="btn btn-primary w-full"
+			>Beenden!</a>
+		</div>
+	</div>
+}
+
+templ KalibrungFeedback() {
+	<div class="card-body grow">
+		<h2 class="card-title ">
+			Kalibrierung erfolgreich abgeschlossen! ✨
+		</h2>
+		<div class="divider"></div>
+		<div class="card-body flex flex-col justify-center ">
+			<ul class="flex flex-col gap-2 list-disc list-inside grow">
+				<li>
+					<span class="font-bold">Dein Lernstil:</span>
+					Wir werden dir Inhalte bevorzugt visuell mit Diagrammen
+					und Infografiken aufbereiten.
+				</li>
+				<li>
+					<span class="font-bold">Dein Lerntempo:</span> Die Erklärungen werden in einem entspannten und
+					ausführlichen Tempo präsentiert, um dir genug Zeit zum Verstehen zu geben.
+				</li>
+				<li>
+					<span class="font-bold">Deine Interessen:</span> Inhalte in Mathematik und Informatik werden stärker
+					berücksichtigt und Querverweise dazu geschaffen.
+				</li>
+				<li>
+					<span class="font-bold">Herausforderungen:</span> Die KI wird dir gezielte Konzentrationsübungen
+					vorschlagen und komplexe Themen in kleinere, verdauliche Abschnitte gliedern.
+				</li>
+			</ul>
+			<a
+				href="/dashboard.html"
+				class="btn btn-primary w-full"
+			>Jetzt mit dem Lernen beginnen!</a>
 		</div>
 	</div>
 }
