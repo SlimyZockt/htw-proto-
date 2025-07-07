@@ -46,9 +46,9 @@ templ MC(quiz []QuizMC, id int, name string) {
 			}
 			if id == len(quiz) {
 				<a
-					href="/dashboard.html"
+					href="/feedback.html"
 					class="btn btn-primary"
-				>Weiter</a>
+				>Beenden</a>
 			} else {
 				<button
 					class="btn btn-primary"
@@ -58,6 +58,37 @@ templ MC(quiz []QuizMC, id int, name string) {
 					hx-get={ "ubung/" + name + "/" + strconv.Itoa(id+1) }
 				>Weiter</button>
 			}
+		</div>
+	</div>
+}
+
+templ Feedback(name string, quiz_len int) {
+	<div class="card-body grow">
+		<h2 class="card-title ">Feedback für { name }: Deine Lernergebnisse</h2>
+		<div class="divider"></div>
+		<div class="card-body flex flex-col">
+			<div class="flex flex-col gap-2">
+				<p class="text-xl font-semibold text-primary">
+					Glückwunsch! Du hast alle 5/5 Fragen richtig beantwortet! 🎉
+				</p>
+				<p class=" text-md">
+					Eine hervorragende Leistung! Du hast gezeigt, dass du die Konzepte
+					vollständig verstanden hast.
+				</p>
+			</div>
+			<div class="divider"></div>
+			<section class="grow flex flex-col gap-2">
+				<h3 class="text-lg font-semibold">
+					KI Zusammenfassung deiner Leistung
+				</h3>
+				<p class="leading-relaxed grow">
+					Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+				</p>
+				<p class="text-sm text-neutral-500 font-light italic flex-none">
+					(Dies ist eine automatisch generierte Zusammenfassung basierend auf
+					deinen Antworten.)
+				</p>
+			</section>
 		</div>
 	</div>
 }

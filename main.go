@@ -228,6 +228,13 @@ func main() {
 
 	log.Println("Starting Server at :8080")
 	router.Handle("/tmpl", templ.Handler(template.Test()))
+	router.HandleFunc("/feedback", func(w http.ResponseWriter, r *http.Request) {
+		if currentQuiz == "" {
+			w.Header().Add("Hx-Redirect", "/dashboard.html")
+			return
+		}
+		template.Feedback(currentQuiz, len(quiz[currentQuiz])).Render(context.TODO(), w)
+	})
 
 	log.Fatal(http.ListenAndServe(PORT, Logging(router)))
 
