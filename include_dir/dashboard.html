@@ -141,21 +141,21 @@
     </div>
 
     <div class="toast toast-end text-xs font-thin grow w-screen">
-        <div role="alert" class="shrink alert alert-info z-0 glass shadow gap-2 animate-remove" id="alert">
+        <div role="alert" class="shrink alert alert-info z-0 glass shadow gap-2 animate-remove">
             <span class="iconify tabler--info-circle"></span>
             Synchronisiere mit Moodle
             <span class="loading loading-ring loading-xs"></span>
         </div>
-        <div role="alert" class="shrink alert alert-info z-0 glass shadow gap-2 animate-remove" id="alert">
+        <div role="alert" class="shrink alert alert-info z-0 glass shadow gap-2 animate-remove">
             <span class="iconify tabler--info-circle"></span>
             dein AI Assistent wird aktualisiert
             <span class="loading loading-ring loading-xs"></span>
         </div>
-        <div role="alert" class="shrink alert alert-info z-0 text-secondary glass shadow gap-2" id="alert">
+        <div role="alert" class="shrink alert alert-info z-0 text-secondary glass shadow gap-2" id="alert-test">
             <span class="iconify tabler--info-circle"></span>
             <span>Deine persönliche AI ist noch nicht kalibriert. Jetzt starten!</span>
             <div>
-                <button class="btn btn-sm btn-ghost text-base-content" hx-trigger="click" hx-target="#alert"
+                <button class="btn btn-sm btn-ghost text-base-content" hx-trigger="click" hx-target="#alert-test"
                     hx-swap="delete" hx-get="/del">Später</button>
 
                 <button class="btn btn-primary" hx-get="/ubung/intro/1" hx-swap="none" hx-trigger="click">
