@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="output.css">
     <script src="https://unpkg.com/htmx.org@2.0.4"></script>
     <title>HTW Lern</title>
+    <style>
+
+
+    </style>
 </head>
 
 <body class="flex flex-col gap-0 m-0 p-0 min-h-screen from-primary/20 to-secondary/20 bg-gradient-to-br">
@@ -19,7 +23,13 @@
                 <span class="iconify tabler--message"></span>
                 Chat
             </a>
-            <div class="bg-base-100/40 shadow skeleton h-10 w-10 shrink-0 rounded-full">
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="bg-base-100/40 shadow skeleton h-10 w-10 shrink-0 rounded-full ">
+                </div>
+                <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                    <li><a>Item 1</a></li>
+                    <li><a>Item 2</a></li>
+                </ul>
             </div>
         </div>
     </header>
@@ -28,7 +38,7 @@
 
         <div role="alert" class="shrink alert alert-info text-secondary glass shadow gap-2" id="alert">
             <span class="iconify tabler--info-circle"></span>
-            <span>Du hast den Einstiegstest nicht gemacht!</span>
+            <span>Deine persönliche AI ist noch nicht kalibriert. Jetzt starten!</span>
             <div>
                 <button class="btn btn-sm btn-ghost text-base-content" hx-trigger="click" hx-target="#alert"
                     hx-swap="delete" hx-get="/del">Später</button>
@@ -72,62 +82,6 @@
                 </div>
             </div>
 
-            <div class="rounded gap-2 p-4 flex flex-col glass shadow">
-                <div class="flex flex-row items-center justify-between">
-                    <h2 class="font-semibold">Timeline</h2>
-                    <select class="select select-sm select-ghost text-right">
-                        <option selected>Mathematik</option>
-                        <option>Modellierung von Anwendungssystemen</option>
-                        <option>Geschäftsprozesse und betriebliche Anwendungen</option>
-                    </select>
-                </div>
-                <ul class="timeline justify-center items-center">
-                    <li>
-                        <div class="timeline-end timeline-box btn glass shadow" hx-get="/ubung/mathematik/1"
-                            hx-swap="none">Übung 1</div>
-                        <div class="timeline-middle ">
-                            <span class="iconify tabler--circle-check-filled bg-primary"></span>
-                        </div>
-                        <hr class="bg-primary" />
-                    </li>
-                    <li>
-                        <hr class="bg-primary" />
-                        <div class="timeline-start timeline-box btn glass shadow" hx-get="/ubung/mathematik/2"
-                            hx-swap="none">Übung 2</div>
-                        <div class="timeline-middle">
-                            <span class="iconify tabler--circle-check-filled bg-primary"></span>
-                        </div>
-                        <hr class="bg-primary" />
-                    </li>
-                    <li>
-                        <hr class="bg-primary" />
-                        <div class="timeline-end timeline-box btn glass shadow" hx-get="/ubung/mathematik/3"
-                            hx-swap="none">Übung 3</div>
-                        <div class="timeline-middle">
-                            <span class="iconify tabler--circle-check-filled bg-primary"></span>
-                        </div>
-                        <hr class="bg-primary" />
-                    </li>
-                    <li>
-                        <hr class="bg-base-content/50" />
-                        <div class="timeline-start timeline-box btn glass shadow" hx-get="/ubung/mathematik/4"
-                            hx-swap="none">Übung 4</div>
-
-                        <div class="timeline-middle">
-                            <span class="iconify tabler--circle-check-filled bg-base-content/50"></span>
-                        </div>
-                        <hr class="bg-base-content/50" />
-                    </li>
-                    <li>
-                        <hr class="bg-base-content/50" />
-                        <div class="timeline-end timeline-box btn glass shadow" hx-get="/ubung/mathematik/5"
-                            hx-swap="none">Test 1</div>
-                        <div class="timeline-middle">
-                            <span class="iconify tabler--circle-check-filled bg-base-content/50"></span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
             <div class="rounded gap-4 p-4 flex flex-col glass shadow ">
                 <h2 class="font-semibold">Aktuelle Kurse</h2>
                 <fieldset class="fieldset flex p-4 shadow">
@@ -192,7 +146,16 @@
                 </div>
             </div>
         </div>
+
+    </div>
+
+    <div class="p-2 toast toast-end text-xs font-thin glass shadow animate-remove">
+        <span>
+            Synchronisiere mit Moodle
+            <span class="loading loading-ring loading-xs"></span>
+        </span>
     </div>
 </body>
+
 
 </html>

@@ -39,3 +39,12 @@
   --noise: 0;
 }
 
+@theme {
+  --animate-remove: remove 4s ease-in-out 1 forwards;
+
+  @keyframes remove {
+    0% {opacity: 100%;}
+    100% {opacity: 0%;}
+  }
+}
+
