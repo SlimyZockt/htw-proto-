@@ -10,7 +10,7 @@
 </head>
 
 <body class="flex flex-col gap-0 m-0 p-0 min-h-screen from-primary/20 to-secondary/20 bg-gradient-to-br">
-    <header class="navbar glass shadow">
+    <header class="navbar glass shadow z-10">
         <div class="flex-1">
             <a class="btn btn-ghost text-xl" href="dashboard.html">HTW Lern</a>
         </div>
@@ -19,7 +19,18 @@
                 <span class="iconify tabler--dashboard"></span>
                 Dashboard
             </a>
-            <div class="bg-base-100/40 shadow skeleton h-10 w-10 shrink-0 rounded-full">
+            <a class="btn glass" href="chat.html">
+                <span class="iconify tabler--message"></span>
+                Chat
+            </a>
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="bg-base-100/40 shadow skeleton h-10 w-10 shrink-0 rounded-full ">
+                </div>
+                <ul tabindex="0"
+                    class="dropdown-content menu bg-base-100/90 glass shadow rounded-box z-1 w-52 p-2 shadow-sm gap-2">
+                    <li><a class="btn ">Profil</a></li>
+                    <li><a class="btn ">Einstellungen</a></li>
+                    <li><a class="btn btn-accent">Sync Moodle</a></li </ul>
             </div>
         </div>
     </header>
