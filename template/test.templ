@@ -131,10 +131,11 @@ templ (c *Course) Control() {
 }
 
 templ (c *Course) Code() {
+	{{ id := get_pages_count(c.Pages[:c.Progress], PageCode) }}
 	<div class="card-body grow" id="quiz">
 		<div class="card-title justify-between">
 			<h2>
-				Code: { c.Name }
+				{ c.CodePages[id].Question }
 			</h2>
 			<span class="min-w-fit">
 				{ c.Progress + 1 } / { len(c.Pages) }

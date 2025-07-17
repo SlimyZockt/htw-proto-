@@ -37,6 +37,11 @@ var courses = []template.Course{
 				Question: "Was ist die Zeitkomplexität einer linearen Suche?",
 			},
 		},
+		CodePages: []template.CodeTask{
+			{
+				Question: "Implementiere Merge sort in JavaScript.",
+			},
+		},
 		LernPages: []template.LernTask{},
 		Pages: []template.CoursePageType{
 			template.PageQuiz,
@@ -93,7 +98,12 @@ var courses = []template.Course{
 				Question: "Was bedeutet es, dass eine Menge 'abgeschlossen' ist?",
 			},
 		},
-		LernPages: nil,
+		LernPages: []template.LernTask{
+			{
+				Title:  "Einführung in Mathematik I",
+				Layout: template.LayoutImgWithText,
+			},
+		},
 		CodePages: nil,
 		Pages: []template.CoursePageType{
 			template.PageLern,
