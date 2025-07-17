@@ -11,23 +11,165 @@ type Anwser struct {
 	Content string
 }
 
-type QuizMC struct {
+type MCTask struct {
 	Awnsers  []Anwser
 	Question string
 }
 
-templ MC(quiz []QuizMC, id int, name string) {
+type CodeTask struct {
+	Question string
+}
+
+type LernTask struct {
+	Title  string
+	Layout LernLayout
+}
+
+type LernLayout int
+
+const (
+	LayoutImgWithText LernLayout = iota
+	LayoutOnlyText
+	LayoutTwoImagesSomeText
+)
+
+type CoursePageType int
+
+const (
+	PageQuiz CoursePageType = iota
+	PageCode
+	PageLern
+)
+
+type Course struct {
+	Name      string
+	QuizPages []MCTask
+	LernPages []LernTask
+	CodePages []CodeTask
+	Pages     []CoursePageType
+	Progress  int
+}
+
+func get_pages_count(pages []CoursePageType, target CoursePageType) int {
+	count := 0
+
+	for _, p := range pages {
+		if p != target {
+			continue
+		}
+		count += 1
+	}
+
+	return count
+}
+
+templ RenderPage(c *Course) {
+	switch c.Pages[c.Progress] {
+		case PageCode:
+			@c.Code()
+		case PageQuiz:
+			@c.Quiz()
+		case PageLern:
+			@c.Lern()
+		default:
+			<span>Error 404 </span>
+	}
+}
+
+templ (c *Course) Lern() {
+	{{ id := get_pages_count(c.Pages[:c.Progress], PageLern) }}
+	<div class="card-body grow gap-4" id="quiz">
+		<div class="card-title justify-between">
+			<h2>
+				{ c.LernPages[id].Title }
+			</h2>
+			<span class="min-w-fit">
+				{ c.Progress + 1 } / { len(c.Pages) }
+			</span>
+		</div>
+		<div class="grow flex flex-col gap-4">
+			<div class="skeleton bg-neutral-content/20 w-full h-32"></div>
+			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+		</div>
+		<div class="card-actions justify-end">
+			@c.Control()
+		</div>
+	</div>
+}
+
+templ (c *Course) Control() {
+	if c.Progress > 0 {
+		<button
+			class="btn btn-ghost glass"
+			hx-trigger="click"
+			hx-swap="outerHTML"
+			hx-target="#quiz"
+			hx-get={ "ubung/" + c.Name + "/" + strconv.Itoa(c.Progress-1) }
+		>Zurück</button>
+	}
+	if c.Progress == len(c.Pages) - 1 {
+		<a
+			href="/feedback.html"
+			class="btn btn-primary"
+		>Beenden</a>
+	} else {
+		<button
+			class="btn btn-primary"
+			hx-trigger="click"
+			hx-swap="outerHTML"
+			hx-target="#quiz"
+			hx-get={ "ubung/" + c.Name + "/" + strconv.Itoa(c.Progress+1) }
+		>Weiter</button>
+	}
+}
+
+templ (c *Course) Code() {
 	<div class="card-body grow" id="quiz">
 		<div class="card-title justify-between">
 			<h2>
-				{ quiz[id-1].Question }
+				Code: { c.Name }
 			</h2>
 			<span class="min-w-fit">
-				{ id } / { len(quiz) }
+				{ c.Progress + 1 } / { len(c.Pages) }
+			</span>
+		</div>
+		<div class="flex flex-row grow justify-between gap-2">
+			<code class="w-full">
+				<textarea class="textarea textarea-primary glass shadow outline-none resize-none border-none w-full h-full" placeholder="npm i htw-lern"></textarea>
+			</code>
+			<div class="mockup-browser border-base-300 bg-base-100 border w-full shadow">
+				<div class="mockup-browser-toolbar">
+					<div class="input">http://localhost:8080</div>
+				</div>
+				<div class="grid place-content-center border-t border-base-300 h-80">Hallo!</div>
+			</div>
+		</div>
+		<div class="card-actions justify-end">
+			@c.Control()
+		</div>
+	</div>
+}
+
+templ (c *Course) Quiz() {
+	{{ id := get_pages_count(c.Pages[:c.Progress], PageQuiz) }}
+	<div class="card-body grow" id="quiz">
+		<div class="card-title justify-between">
+			<h2>
+				{ c.QuizPages[id].Question }
+			</h2>
+			<span class="min-w-fit">
+				{ c.Progress + 1 } / { len(c.Pages) }
 			</span>
 		</div>
 		<ul class="list grow">
-			for _, anwser := range quiz[id-1].Awnsers {
+			for _, anwser := range c.QuizPages[id].Awnsers {
 				<li class="list-row flex flex-row ">
 					<div class="grow">{ anwser.Content }</div>
 					<input type="checkbox" class="input checkbox"/>
@@ -35,29 +177,7 @@ templ MC(quiz []QuizMC, id int, name string) {
 			}
 		</ul>
 		<div class="card-actions justify-end">
-			if id > 1 {
-				<button
-					class="btn btn-ghost glass"
-					hx-trigger="click"
-					hx-swap="outerHTML"
-					hx-target="#quiz"
-					hx-get={ "ubung/" + name + "/" + strconv.Itoa(id-1) }
-				>Zurück</button>
-			}
-			if id == len(quiz) {
-				<a
-					href="/feedback.html"
-					class="btn btn-primary"
-				>Beenden</a>
-			} else {
-				<button
-					class="btn btn-primary"
-					hx-trigger="click"
-					hx-swap="outerHTML"
-					hx-target="#quiz"
-					hx-get={ "ubung/" + name + "/" + strconv.Itoa(id+1) }
-				>Weiter</button>
-			}
+			@c.Control()
 		</div>
 	</div>
 }

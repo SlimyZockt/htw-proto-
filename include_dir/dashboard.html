@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="output.css">
     <script src="https://unpkg.com/htmx.org@2.0.4"></script>
     <title>HTW Lern</title>
-    <style>
-
-
-    </style>
 </head>
 
 <body class="flex flex-col gap-0 m-0 p-0 min-h-screen from-primary/20 to-secondary/20 bg-gradient-to-br">
@@ -83,7 +79,7 @@
                     <li class="list-row flex flex-col">
                         <div class="flex items-center justify-between grow">
                             <div class="flex flex-col">
-                                <span>Mathematik</span>
+                                <span>Mathematik I</span>
                                 <span class="font-light italic text-xs">55%</span>
                             </div>
                             <button class="btn btn-primary" hx-get="/ubung/mathematik/4" hx-swap="none">
@@ -112,7 +108,7 @@
                                 <span>Geschäftsprozesse und betriebliche Anwendungen</span>
                                 <span class="font-light italic text-xs">0%</span>
                             </div>
-                            <button class="btn btn-primary" hx-get="/ubung/bean/1" hx-swap="none">
+                            <button class="btn btn-primary" hx-get="/ubung/bean/0" hx-swap="none">
                                 Starten
                             </button>
                         </div>
@@ -146,31 +142,33 @@
             Synchronisiere mit Moodle
             <span class="loading loading-ring loading-xs"></span>
         </div>
-        <div role="alert" class="shrink alert alert-info z-0 glass shadow gap-2 animate-remove">
+        <div role="alert" class="shrink alert alert-info z-0 glass shadow gap-2 animate-remove"
+            hx-trigger="load delay:3s" hx-swap="delete" hx-get="/del">
             <span class="iconify tabler--info-circle"></span>
             dein AI Assistent wird aktualisiert
             <span class="loading loading-ring loading-xs"></span>
         </div>
-        <div role="alert" class="shrink alert alert-info z-0 text-secondary glass shadow gap-2" id="alert-test">
+        <div role="alert" class="shrink alert alert-info z-0 text-secondary glass shadow gap-2" id="alert-test"
+            hx-trigger="load delay:3s " hx-swap="delete" hx-get="/del">
             <span class="iconify tabler--info-circle"></span>
             <span>Deine persönliche AI ist noch nicht kalibriert. Jetzt starten!</span>
             <div>
                 <button class="btn btn-sm btn-ghost text-base-content" hx-trigger="click" hx-target="#alert-test"
                     hx-swap="delete" hx-get="/del">Später</button>
 
-                <button class="btn btn-primary" hx-get="/ubung/intro/1" hx-swap="none" hx-trigger="click">
+                <button class="btn btn-primary" hx-get="/ubung/intro/0" hx-swap="none" hx-trigger="click">
                     Starten</button>
             </div>
         </div>
 
         <div role="alert" class="shrink alert alert-warning z-0  glass shadow gap-2" id="alert">
             <span class="iconify tabler--alert-circle"></span>
-            <span>AI: Hey, du liegst in Mathematik hinterher!</span>
+            <span>AI: Hey, du liegst in Geschäftsprozesse und betriebliche Anwendungen hinterher!</span>
             <div>
                 <button class="btn btn-sm btn-ghost text-base-content" hx-trigger="click" hx-target="#alert"
                     hx-swap="delete" hx-get="/del">Später</button>
 
-                <button class="btn btn-primary" hx-get="/ubung/intro/1" hx-swap="none" hx-trigger="click">
+                <button class="btn btn-primary" hx-get="/ubung/bean/0" hx-swap="none" hx-trigger="click">
                     Weiter</button>
             </div>
         </div>

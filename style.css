@@ -40,11 +40,13 @@
 }
 
 @theme {
-  --animate-remove: remove 4s ease-in-out 1 forwards;
+  --animate-remove: remove 3s ease-in-out 1 forwards;
 
   @keyframes remove {
     0% {opacity: 100%;}
-    100% {opacity: 0%;}
+    100% {
+    opacity: 0%;
+  }
   }
 }
 
