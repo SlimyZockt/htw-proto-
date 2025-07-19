@@ -20,6 +20,10 @@ type CodeTask struct {
 	Question string
 }
 
+type TextTask struct {
+	Question string
+}
+
 type LernTask struct {
 	Title  string
 	Layout LernLayout
@@ -39,6 +43,7 @@ const (
 	PageQuiz CoursePageType = iota
 	PageCode
 	PageLern
+	PageText
 )
 
 type Course struct {
@@ -46,6 +51,7 @@ type Course struct {
 	QuizPages []MCTask
 	LernPages []LernTask
 	CodePages []CodeTask
+	TextPages []TextTask
 	Pages     []CoursePageType
 	Progress  int
 }
@@ -71,6 +77,8 @@ templ RenderPage(c *Course) {
 			@c.Quiz()
 		case PageLern:
 			@c.Lern()
+		case PageText:
+			@c.Text()
 		default:
 			<span>Error 404 </span>
 	}
@@ -87,17 +95,46 @@ templ (c *Course) Lern() {
 				{ c.Progress + 1 } / { len(c.Pages) }
 			</span>
 		</div>
-		<div class="grow flex flex-col gap-4">
-			<div class="skeleton bg-neutral-content/20 w-full h-32"></div>
-			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-			<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-		</div>
+		switch c.LernPages[id].Layout {
+			case LayoutImgWithText:
+				<div class="grow flex flex-col gap-4">
+					<div class="skeleton bg-neutral-content/20 w-full h-32"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+				</div>
+			case LayoutTwoImagesSomeText:
+				<div class="grow flex flex-col gap-4">
+					<div class="flex flex-row gap-4">
+						<div class="skeleton bg-neutral-content/20 w-full h-32"></div>
+						<div class="skeleton bg-neutral-content/20 w-full h-32"></div>
+					</div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+				</div>
+			case LayoutOnlyText:
+				<div class="grow flex flex-col gap-4">
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+				</div>
+		}
 		<div class="card-actions justify-end">
 			@c.Control()
 		</div>
@@ -143,7 +180,7 @@ templ (c *Course) Code() {
 		</div>
 		<div class="flex flex-row grow justify-between gap-2">
 			<code class="w-full">
-				<textarea class="textarea textarea-primary glass shadow outline-none resize-none border-none w-full h-full" placeholder="npm i htw-lern"></textarea>
+				<textarea class="textarea textarea-primary glass shadow outline-none resize-none border-none w-full h-full" placeholder="//Code hier schreiben..."></textarea>
 			</code>
 			<div class="mockup-browser border-base-300 bg-base-100 border w-full shadow">
 				<div class="mockup-browser-toolbar">
@@ -152,6 +189,24 @@ templ (c *Course) Code() {
 				<div class="grid place-content-center border-t border-base-300 h-80">Hallo!</div>
 			</div>
 		</div>
+		<div class="card-actions justify-end">
+			@c.Control()
+		</div>
+	</div>
+}
+
+templ (c *Course) Text() {
+	{{ id := get_pages_count(c.Pages[:c.Progress], PageText) }}
+	<div class="card-body grow" id="quiz">
+		<div class="card-title justify-between">
+			<h2>
+				{ c.TextPages[id].Question }
+			</h2>
+			<span class="min-w-fit">
+				{ c.Progress + 1 } / { len(c.Pages) }
+			</span>
+		</div>
+		<textarea class="textarea textarea-primary glass shadow outline-none resize-none border-none w-full h-full" placeholder="Antwort hier schreiben..."></textarea>
 		<div class="card-actions justify-end">
 			@c.Control()
 		</div>

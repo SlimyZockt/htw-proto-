@@ -101,7 +101,7 @@ var courses = []template.Course{
 		LernPages: []template.LernTask{
 			{
 				Title:  "Einführung in Mathematik I",
-				Layout: template.LayoutImgWithText,
+				Layout: template.LayoutTwoImagesSomeText,
 			},
 		},
 		CodePages: nil,
@@ -164,15 +164,20 @@ var courses = []template.Course{
 			},
 		},
 		CodePages: nil,
+		TextPages: []template.TextTask{
+			{
+				Question: "Was versteht man unter einem Anwendungssystem, und welche Rolle spielt die Modellierung in dessen Entwicklung?",
+			},
+		},
 		LernPages: []template.LernTask{
 			{
 				Title:  "Einführung in Modellierung von Anwendungssystemen",
-				Layout: template.LayoutImgWithText,
+				Layout: template.LayoutOnlyText,
 			},
 		},
 		Pages: []template.CoursePageType{
 			template.PageLern,
-			template.PageQuiz,
+			template.PageText,
 			template.PageQuiz,
 			template.PageQuiz,
 			template.PageQuiz,
