@@ -77,42 +77,83 @@
                 </fieldset>
                 <ul class="list shadow">
                     <li class="list-row flex flex-col">
-                        <div class="flex items-center justify-between grow">
-                            <div class="flex flex-col">
-                                <span>Mathematik I</span>
-                                <span class="font-light italic text-xs">55%</span>
-                            </div>
-                            <button class="btn btn-primary" hx-get="/ubung/mathematik/4" hx-swap="none">
-                                Weiter
-                            </button>
-                        </div>
-                        <progress class="progress progress-primary" value="55" max="100"></progress>
+                        <span class="text-lg font-semibold">Mathematik I</span>
+                        <ul class="flex flex-col gap-4">
+                            <li>
+                                <div class="flex items-center justify-between grow">
+
+                                    <div class="flex flex-col">
+                                        <span>Vektorrechnung</span>
+                                        <span class="font-light italic text-xs">55%</span>
+                                    </div>
+                                    <button class="btn btn-primary" hx-get="/ubung/mathematik/4" hx-swap="none">
+                                        Weiter
+                                    </button>
+                                </div>
+                                <progress class="progress progress-primary" value="55" max="100"></progress>
+                            </li>
+                            <li>
+                                <div class="flex items-center justify-between grow">
+
+                                    <div class="flex flex-col">
+                                        <span>Mengenlehre</span>
+                                        <span class="font-light italic text-xs">0%</span>
+                                    </div>
+                                    <button class="btn btn-primary" hx-get="/ubung/mathematik/4" hx-swap="none">
+                                        Starten
+                                    </button>
+                                </div>
+                                <progress class="progress progress-primary" value="0" max="100"></progress>
+                            </li>
+                        </ul>
                     </li>
 
                     <li class="list-row flex flex-col">
-                        <div class="flex items-center justify-between grow">
-                            <div class="flex flex-col">
-                                <span>Modellierung von Anwendungssystemen</span>
-                                <span class="font-light italic text-xs">35%</span>
-                            </div>
-                            <button class="btn btn-primary" hx-get="/ubung/mas/3" hx-swap="none">
-                                Weiter
-                            </button>
-                        </div>
-                        <progress class="progress progress-primary" value="35" max="100"></progress>
-                    </li>
+                        <span class="text-lg font-semibold">Modellierung von Anwendungssystemen</span>
+                        <ul class="flex flex-col gap-4">
+                            <li>
+                                <div class="flex items-center justify-between grow">
 
+                                    <div class="flex flex-col">
+                                        <span>UML-Diagramm</span>
+                                        <span class="font-light italic text-xs">35%</span>
+                                    </div>
+                                    <button class="btn btn-primary" hx-get="/ubung/mas/3" hx-swap="none">
+                                        Weiter
+                                    </button>
+                                </div>
+                                <progress class="progress progress-primary" value="55" max="100"></progress>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="list-row flex flex-col">
-                        <div class="flex items-center justify-between grow">
-                            <div class="flex flex-col">
-                                <span>Geschäftsprozesse und betriebliche Anwendungen</span>
-                                <span class="font-light italic text-xs">0%</span>
-                            </div>
-                            <button class="btn btn-primary" hx-get="/ubung/bean/0" hx-swap="none">
-                                Starten
-                            </button>
-                        </div>
-                        <progress class="progress progress-primary" value="0" max="100"></progress>
+                        <span class="text-lg font-semibold">Geschäftsprozesse und betriebliche Anwendungen</span>
+                        <ul class="flex flex-col gap-4">
+                            <li>
+                                <div class="flex items-center justify-between grow">
+                                    <div class="flex flex-col">
+                                        <span>ERP Anwendungen</span>
+                                        <span class="font-light italic text-xs">0%</span>
+                                    </div>
+                                    <button class="btn btn-primary" hx-get="/ubung/bean/0" hx-swap="none">
+                                        Starten
+                                    </button>
+                                </div>
+                                <progress class="progress progress-primary" value="0" max="100"></progress>
+                            </li>
+                            <li>
+                                <div class="flex items-center justify-between grow">
+                                    <div class="flex flex-col">
+                                        <span>SCM Software</span>
+                                        <span class="font-light italic text-xs">0%</span>
+                                    </div>
+                                    <button class="btn btn-primary" hx-get="/ubung/bean/5" hx-swap="none">
+                                        Starten
+                                    </button>
+                                </div>
+                                <progress class="progress progress-primary" value="0" max="100"></progress>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
                 <div class="shadow p-4 flex flex-row justify-between">
@@ -163,7 +204,7 @@
 
         <div role="alert" class="shrink alert alert-warning z-0  glass shadow gap-2" id="alert">
             <span class="iconify tabler--ai"></span>
-            <span>Hey, du liegst in Geschäftsprozesse und betriebliche Anwendungen hinterher!</span>
+            <span>Hey, du liegst in ERP Anwendungen hinterher!</span>
             <div>
                 <button class="btn btn-sm btn-ghost text-base-content" hx-trigger="click" hx-target="#alert"
                     hx-swap="delete" hx-get="/del">Später</button>
