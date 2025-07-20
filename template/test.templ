@@ -83,9 +83,12 @@ templ RenderPage(c *Course) {
 templ (c *Course) Lern() {
 	{{ id := get_pages_count(c.Pages[:c.Progress], PageLern) }}
 	<div class="card-body grow gap-4" id="quiz">
-		<div class="card-title justify-between">
+		<div class="card-title justify-between items-center">
 			<h2>
 				{ c.LernPages[id].Title }
+				<button class="btn btn-ghost btn-square">
+					<span class="swap-on iconify tabler--volume"></span>
+				</button>
 			</h2>
 			<span class="min-w-fit">
 				{ c.Progress + 1 } / { len(c.Pages) }
@@ -94,41 +97,35 @@ templ (c *Course) Lern() {
 		switch c.LernPages[id].Layout {
 			case LayoutImgWithText:
 				<div class="grow flex flex-col gap-4">
-					<div class="skeleton bg-neutral-content/20 w-full h-32"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<img src="https://placehold.co/1800x800" alt=""/>
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+					</p>
 				</div>
 			case LayoutTwoImagesSomeText:
 				<div class="grow flex flex-col gap-4">
-					<div class="flex flex-row gap-4">
-						<div class="skeleton bg-neutral-content/20 w-full h-32"></div>
-						<div class="skeleton bg-neutral-content/20 w-full h-32"></div>
+					<div class="flex flex-row gap-4 justify-between">
+						<img src="https://placehold.co/420x200" alt=""/>
+						<img src="https://placehold.co/420x200" alt=""/>
 					</div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+					</p>
 				</div>
 			case LayoutOnlyText:
-				<div class="grow flex flex-col gap-4">
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
-					<div class="skeleton bg-neutral-content/20 w-full h-8"></div>
+				<div class="grow">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+					</p>
+					<p>
+						Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+					</p>
+					<p>
+						Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+					</p>
+					<p>
+						Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+					</p>
 				</div>
 		}
 		<div class="card-actions justify-end">
@@ -310,42 +307,42 @@ templ AISetting() {
 					Text Anteil
 					<span class="iconify tabler--info-circle"></span>
 				</label>
-				<input type="range" min="0" max="100" value="25" class="range  w-full range-xs" step="10"/>
+				<input type="range" min="0" max="100" value="25" class="range range-primary  w-full range-xs" step="10"/>
 			</div>
 			<div class="flex flex-col gap-4">
 				<label class="label">
 					Bild Anteil
 					<span class="iconify tabler--info-circle"></span>
 				</label>
-				<input type="range" min="0" max="100" value="25" class="range w-full range-xs" step="10"/>
+				<input type="range" min="0" max="100" value="25" class="range range-primary w-full range-xs" step="10"/>
 			</div>
 			<div class="flex flex-col gap-4">
 				<label class="label">
 					Multiple choice Anteil
 					<span class="iconify tabler--info-circle"></span>
 				</label>
-				<input type="range" min="0" max="100" value="25" class="range  w-full range-xs" step="10"/>
+				<input type="range" min="0" max="100" value="25" class="range range-primary  w-full range-xs" step="10"/>
 			</div>
 			<div class="flex flex-col gap-4">
 				<label class="label">
 					Code Anteil
 					<span class="iconify tabler--info-circle"></span>
 				</label>
-				<input type="range" min="0" max="100" value="25" class="range  w-full range-xs" step="10"/>
+				<input type="range" min="0" max="100" value="25" class="range range-primary w-full range-xs" step="10"/>
 			</div>
 			<div class="flex flex-col gap-4">
 				<label class="label">
 					Text Fragen Anteil
 					<span class="iconify tabler--info-circle"></span>
 				</label>
-				<input type="range" min="0" max="100" value="25" class="range  w-full range-xs" step="10"/>
+				<input type="range" min="0" max="100" value="25" class="range range-primary w-full range-xs" step="10"/>
 			</div>
 			<div class="flex flex-col gap-4">
 				<label class="label">
 					Lücken Text Anteil
 					<span class="iconify tabler--info-circle"></span>
 				</label>
-				<input type="range" min="0" max="100" value="25" class="range  w-full range-xs" step="10"/>
+				<input type="range" min="0" max="100" value="25" class="range range-primary  w-full range-xs" step="10"/>
 			</div>
 		</fieldset>
 	</div>
