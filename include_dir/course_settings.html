@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="htw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <title>HTW Lern</title>
+</head>
+
+<body class="flex flex-col gap-0 m-0 p-0 min-h-screen from-primary/20 to-secondary/20 bg-gradient-to-br">
+    <header class="navbar glass shadow z-10">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-xl" href="dashboard.html">HTW Lern</a>
+        </div>
+        <div class="flex-none flex gap-2">
+            <a class="btn glass" href="dashboard.html">
+                <span class="iconify tabler--dashboard"></span>
+                Dashboard
+            </a>
+            <a class="btn glass" href="chat.html">
+                <span class="iconify tabler--message"></span>
+                Chat
+            </a>
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="bg-base-100/40 shadow skeleton h-10 w-10 shrink-0 rounded-full ">
+                </div>
+                <ul tabindex="0"
+                    class="dropdown-content menu bg-base-100/90 glass shadow rounded-box z-1 w-52 p-2 shadow-sm gap-2">
+                    <li><a class="btn ">Profil</a></li>
+                    <li><a class="btn ">Einstellungen</a></li>
+                    <li><a class="btn btn-accent">Sync Moodle</a></li </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="flex justify-center p-4 gap-4 grow">
+        <div class="card card-border gap-4 glass grow shadow justify-between p-4">
+            <h1 class="card-title">AI Einstellung</h1>
+            <div class="card-body">
+                <fieldset class="fieldset glass rounded-box shadow p-4 gap-4">
+                    <legend class="fieldset-legend">Kalibrierung</legend>
+
+                    <div class="flex flex-col gap-4">
+                        <label class="label">Text Anteil
+                            <span class="iconify tabler--info-circle"></span>
+                        </label>
+                        <input type="range" min="0" max="100" value="25" class="range  w-full range-xs" step="10" />
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <label class="label">Bild Anteil
+                            <span class="iconify tabler--info-circle"></span>
+                        </label>
+                        <input type="range" min="0" max="100" value="25" class="range w-full range-xs" step="10" />
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <label class="label">Multiple choice Anteil
+                            <span class="iconify tabler--info-circle"></span>
+                        </label>
+                        <input type="range" min="0" max="100" value="25" class="range  w-full range-xs" step="10" />
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <label class="label">Code Anteil
+                            <span class="iconify tabler--info-circle"></span>
+                        </label>
+                        <input type="range" min="0" max="100" value="25" class="range  w-full range-xs" step="10" />
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <label class="label">Text Fragen Anteil
+                            <span class="iconify tabler--info-circle"></span>
+                        </label>
+                        <input type="range" min="0" max="100" value="25" class="range  w-full range-xs" step="10" />
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <label class="label">Lücken Text Anteil
+                            <span class="iconify tabler--info-circle"></span>
+                        </label>
+                        <input type="range" min="0" max="100" value="25" class="range  w-full range-xs" step="10" />
+                    </div>
+                </fieldset>
+
+                <div class="grow"></div>
+                <div class="flex flex-row-reverse gap-4">
+                    <a href="./dashboard.html" class="btn btn-primary">Speichern</a>
+                    <a href="./dashboard.html" class="btn btn-ghost">Abbrechen</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
