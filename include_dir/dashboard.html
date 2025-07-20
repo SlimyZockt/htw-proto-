@@ -23,193 +23,224 @@
                 <div tabindex="0" role="button" class="bg-base-100/40 shadow skeleton h-10 w-10 shrink-0 rounded-full ">
                 </div>
                 <ul tabindex="0"
-                    class="dropdown-content menu bg-base-100/90 glass shadow rounded-box z-1 w-52 p-2 shadow-sm gap-2">
+                    class="dropdown-content menu bg-base-100/90 glass shadow rounded-box z-1 w-52 p-2  gap-2">
                     <li><a class="btn ">Profil</a></li>
                     <li><a class="btn ">Einstellungen</a></li>
+                    <li>
+                        <label class="btn  grow swap">
+                            <input type="checkbox" value="htw-dark" class="theme-controller" />
+
+                            <span class="swap-on iconify tabler--sun"></span>
+                            <div class="swap-off iconify tabler--moon"></div>
+                        </label>
+                    </li>
                     <li><a class="btn btn-accent">Sync Moodle</a></li>
                 </ul>
             </div>
         </div>
+
     </header>
 
     <div class="flex flex-col p-4 gap-4 ">
 
-
-        <div class="flex gap-4 flex-col ">
-            <div class="rounded shrink gap-2 flex flex-col glass shadow">
-                <div class="stats m-2">
-                    <div class="stat">
-                        <div class="stat-figure text-secondary">
-                            <span class="iconify tabler--flame bg-accent"></span>
-                        </div>
-                        <div class="stat-title">
-                            <div class="stat-title">Lernstreak</div>
-                        </div>
-                        <div class="stat-value">16 Tage</div>
-                        <div class="stat-desc">+2 seit letzter Woche</div>
+        <div class="rounded shrink gap-2 flex flex-col glass shadow">
+            <div class="stats m-2">
+                <div class="stat">
+                    <div class="stat-figure text-secondary">
+                        <span class="iconify tabler--flame bg-accent"></span>
                     </div>
-
-                    <div class="stat">
-                        <div class="stat-figure text-secondary">
-                            <span class="iconify tabler--book"></span>
-                        </div>
-                        <div class="stat-title">Abgeschlossene Übungen</div>
-                        <div class="stat-value">60</div>
-                        <div class="stat-desc"> +10 diese Woche</div>
+                    <div class="stat-title">
+                        <div class="stat-title">Lernstreak</div>
                     </div>
+                    <div class="stat-value">16 Tage</div>
+                    <div class="stat-desc">+2 seit letzter Woche</div>
+                </div>
 
-                    <div class="stat">
-                        <div class="stat-figure text-secondary">
-                            <span class="iconify tabler--trophy"></span>
-                        </div>
-                        <div class="stat-title">Badges</div>
-                        <div class="stat-value">12</div>
-                        <div class="stat-desc">+1 diese Woche</div>
+                <div class="stat">
+                    <div class="stat-figure text-secondary">
+                        <span class="iconify tabler--book"></span>
                     </div>
+                    <div class="stat-title">Abgeschlossene Übungen</div>
+                    <div class="stat-value">60</div>
+                    <div class="stat-desc"> +10 diese Woche</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-figure text-secondary">
+                        <span class="iconify tabler--trophy"></span>
+                    </div>
+                    <div class="stat-title">Badges</div>
+                    <div class="stat-value">12</div>
+                    <div class="stat-desc">+1 diese Woche</div>
                 </div>
             </div>
+        </div>
 
-            <div class="rounded gap-4 p-4 flex flex-col glass shadow ">
-                <h2 class="font-semibold">Aktuelle Kurse</h2>
-                <fieldset class="fieldset flex p-4 shadow">
-                    <legend class="fieldset-legend">Suche</legend>
-                    <input type="text" placeholder="" class="input grow glass input-ghost" />
-                </fieldset>
-                <ul class="list shadow">
-                    <li class="list-row flex flex-col">
-                        <span class="text-lg font-semibold">Mathematik I</span>
-                        <ul class="flex flex-col gap-4">
-                            <li>
-                                <div class="flex items-center justify-between grow">
+        <div class="rounded gap-4 p-4 flex flex-col glass shadow ">
+            <div class="flex flex-row justify-between">
+                <h2 class="font-semibold text-xl"> Kurse</h2>
+                <button class="btn btn-ghost glass shadow">
+                    <span class="iconify tabler--plus"></span>
+                    Kurs erstellen
 
-                                    <div class="flex flex-col">
-                                        <span>Vektorrechnung</span>
-                                        <span class="font-light italic text-xs">55%</span>
-                                    </div>
-                                    <button class="btn btn-primary" hx-get="/ubung/mathematik/4" hx-swap="none">
-                                        Weiter
-                                    </button>
-                                </div>
-                                <progress class="progress progress-primary" value="55" max="100"></progress>
-                            </li>
-                            <li>
-                                <div class="flex items-center justify-between grow">
+                </button>
+            </div>
+            <fieldset class="fieldset flex p-4 shadow grow">
+                <legend class="fieldset-legend">Suche</legend>
+                <input type="text" placeholder="" class="input grow glass input-ghost" />
+            </fieldset>
+            <ul class="list shadow">
+                <li class="list-row flex flex-col">
+                    <div class="flex flex-row justify-between">
+                        <span class="grow text-lg font-semibold">Mathematik I</span>
+                        <details class="dropdown dropdown-end flex flex-col">
+                            <summary role="button" class="btn btn-ghost">
+                                <span class="iconify tabler--settings-bolt"></span>
+                            </summary>
 
-                                    <div class="flex flex-col">
-                                        <span>Mengenlehre</span>
-                                        <span class="font-light italic text-xs">0%</span>
-                                    </div>
-                                    <button class="btn btn-primary" hx-get="/ubung/mathematik/4" hx-swap="none">
-                                        Starten
-                                    </button>
+                            <div class="dropdown-content h-full max-w-2xl">
+                                <div hx-get="/ai-settings" hx-swap="outerHTML" hx-trigger="load">
                                 </div>
-                                <progress class="progress progress-primary" value="0" max="100"></progress>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="list-row flex flex-col">
-                        <span class="text-lg font-semibold">Modellierung von Anwendungssystemen</span>
-                        <ul class="flex flex-col gap-4">
-                            <li>
-                                <div class="flex items-center justify-between grow">
-
-                                    <div class="flex flex-col">
-                                        <span>UML-Diagramm</span>
-                                        <span class="font-light italic text-xs">35%</span>
-                                    </div>
-                                    <button class="btn btn-primary" hx-get="/ubung/mas/3" hx-swap="none">
-                                        Weiter
-                                    </button>
-                                </div>
-                                <progress class="progress progress-primary" value="55" max="100"></progress>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="list-row flex flex-col">
-                        <span class="text-lg font-semibold">Geschäftsprozesse und betriebliche Anwendungen</span>
-                        <ul class="flex flex-col gap-4">
-                            <li>
-                                <div class="flex items-center justify-between grow">
-                                    <div class="flex flex-col">
-                                        <span>ERP Anwendungen</span>
-                                        <span class="font-light italic text-xs">0%</span>
-                                    </div>
-                                    <button class="btn btn-primary" hx-get="/ubung/bean/0" hx-swap="none">
-                                        Starten
-                                    </button>
-                                </div>
-                                <progress class="progress progress-primary" value="0" max="100"></progress>
-                            </li>
-                            <li>
-                                <div class="flex items-center justify-between grow">
-                                    <div class="flex flex-col">
-                                        <span>SCM Software</span>
-                                        <span class="font-light italic text-xs">0%</span>
-                                    </div>
-                                    <button class="btn btn-primary" hx-get="/ubung/bean/5" hx-swap="none">
-                                        Starten
-                                    </button>
-                                </div>
-                                <progress class="progress progress-primary" value="0" max="100"></progress>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="shadow p-4 flex flex-row justify-between">
-                    <div class="join join-horizontal">
-                        <button class="btn btn-ghost btn-sm join-item">
-                            <span class="iconify tabler--arrow-left"></span>
-                        </button>
-                        <button class="btn btn-ghost btn-sm join-item">
-                            <span class="iconify tabler--arrow-right"></span>
-                        </button>
+                            </div>
+                        </details>
                     </div>
-                    <select class="select select-sm max-w-fit select-ghost">
-                        <option selected>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select>
+                    <ul class="flex flex-col gap-4">
+                        <li>
+                            <div class="flex items-center justify-between grow">
+
+                                <div class="flex flex-col">
+                                    <span>Vektorrechnung</span>
+                                    <span class="font-light italic text-xs">55%</span>
+                                </div>
+                                <button class="btn btn-primary" hx-get="/ubung/mathematik/4" hx-swap="none">
+                                    Weiter
+                                </button>
+                            </div>
+                            <progress class="progress progress-primary" value="55" max="100"></progress>
+                        </li>
+                        <li>
+                            <div class="flex items-center justify-between grow">
+
+                                <div class="flex flex-col">
+                                    <span>Mengenlehre</span>
+                                    <span class="font-light italic text-xs">0%</span>
+                                </div>
+                                <button class="btn btn-primary" hx-get="/ubung/mathematik/4" hx-swap="none">
+                                    Starten
+                                </button>
+                            </div>
+                            <progress class="progress progress-primary" value="0" max="100"></progress>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="list-row flex flex-col">
+                    <div class="flex flex-row justify-between">
+                        <span class="text-lg font-semibold">Modellierung von Anwendungssystemen</span>
+                        <details class="dropdown dropdown-end flex flex-col">
+                            <summary role="button" class="btn btn-ghost">
+                                <span class="iconify tabler--settings-bolt"></span>
+                            </summary>
+
+                            <div class="dropdown-content h-full max-w-2xl">
+                                <div hx-get="/ai-settings" hx-swap="outerHTML" hx-trigger="load">
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <ul class="flex flex-col gap-4">
+                        <li>
+                            <div class="flex items-center justify-between grow">
+
+                                <div class="flex flex-col">
+                                    <span>UML-Diagramm</span>
+                                    <span class="font-light italic text-xs">35%</span>
+                                </div>
+                                <button class="btn btn-primary" hx-get="/ubung/mas/3" hx-swap="none">
+                                    Weiter
+                                </button>
+                            </div>
+                            <progress class="progress progress-primary" value="55" max="100"></progress>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-row flex flex-col">
+                    <div class="flex flex-row justify-between">
+                        <span class="text-lg font-semibold">Geschäftsprozesse und betriebliche Anwendungen</span>
+                        <details class="dropdown dropdown-end flex flex-col">
+                            <summary role="button" class="btn btn-ghost">
+                                <span class="iconify tabler--settings-bolt"></span>
+                            </summary>
+
+                            <div class="dropdown-content h-full max-w-2xl">
+                                <div hx-get="/ai-settings" hx-swap="outerHTML" hx-trigger="load">
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <ul class="flex flex-col gap-4">
+                        <li>
+                            <div class="flex items-center justify-between grow">
+                                <div class="flex flex-col">
+                                    <span>ERP Anwendungen</span>
+                                    <span class="font-light italic text-xs">0%</span>
+                                </div>
+                                <button class="btn btn-primary" hx-get="/ubung/bean/0" hx-swap="none">
+                                    Starten
+                                </button>
+                            </div>
+                            <progress class="progress progress-primary" value="0" max="100"></progress>
+                        </li>
+                        <li>
+                            <div class="flex items-center justify-between grow">
+                                <div class="flex flex-col">
+                                    <span>SCM Software</span>
+                                    <span class="font-light italic text-xs">0%</span>
+                                </div>
+                                <button class="btn btn-primary" hx-get="/ubung/bean/5" hx-swap="none">
+                                    Starten
+                                </button>
+                            </div>
+                            <progress class="progress progress-primary" value="0" max="100"></progress>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="shadow p-4 flex flex-row justify-between">
+                <div class="join join-horizontal">
+                    <button class="btn btn-ghost btn-sm join-item">
+                        <span class="iconify tabler--arrow-left"></span>
+                    </button>
+                    <button class="btn btn-ghost btn-sm join-item">
+                        <span class="iconify tabler--arrow-right"></span>
+                    </button>
                 </div>
+                <select class="select select-sm max-w-fit select-ghost">
+                    <option selected>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
             </div>
         </div>
 
     </div>
 
-    <div class="toast toast-end text-xs font-thin grow w-screen">
-        <div role="alert" class="shrink alert alert-info z-0 glass shadow gap-2 animate-remove">
+    <div class="snot-hover:tack-top  toast toast-center text-xs font-thin grow w-screen">
+        <div role="alert" class="shrink alert alert-info z-0 glass shadow gap-2 animate-remove"
+            hx-trigger="load delay:3s" hx-swap="delete" hx-get="/del">
             <span class="iconify tabler--info-circle"></span>
             Synchronisiere mit Moodle
             <span class="loading loading-ring loading-xs"></span>
         </div>
-        <div role="alert" class="shrink alert alert-info z-0 glass shadow gap-2 animate-remove"
-            hx-trigger="load delay:3s" hx-swap="delete" hx-get="/del">
-            <span class="iconify tabler--info-circle"></span>
-            dein AI Assistent wird aktualisiert
-            <span class="loading loading-ring loading-xs"></span>
-        </div>
-        <div role="alert" class="shrink alert alert-info z-0 text-secondary glass shadow gap-2" id="alert-test"
-            hx-trigger="load delay:3s " hx-swap="delete" hx-get="/del">
-            <span class="iconify tabler--info-circle"></span>
-            <span>Deine persönliche AI ist noch nicht kalibriert. Jetzt starten!</span>
-            <div>
-                <button class="btn btn-sm btn-ghost text-base-content" hx-trigger="click" hx-target="#alert-test"
-                    hx-swap="delete" hx-get="/del">Später</button>
-
-                <button class="btn btn-primary" hx-get="/ubung/intro/0" hx-swap="none" hx-trigger="click">
-                    Starten</button>
-            </div>
-        </div>
-
-        <div role="alert" class="shrink alert alert-warning z-0  glass shadow gap-2" id="alert">
+        <div role="alert" class="shrink alert z-0 glass shadow gap-2 " id="alert">
             <span class="iconify tabler--ai"></span>
             <span>Hey, du liegst in ERP Anwendungen hinterher!</span>
             <div>
                 <button class="btn btn-sm btn-ghost text-base-content" hx-trigger="click" hx-target="#alert"
                     hx-swap="delete" hx-get="/del">Später</button>
 
-                <button class="btn btn-primary" hx-get="/ubung/bean/0" hx-swap="none" hx-trigger="click">
+                <button class="btn btn-secondary" hx-get="/ubung/bean/0" hx-swap="none" hx-trigger="click">
                     Starten</button>
             </div>
         </div>

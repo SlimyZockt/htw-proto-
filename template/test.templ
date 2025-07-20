@@ -2,10 +2,6 @@ package template
 
 import "strconv"
 
-templ Test() {
-	<p class="">Hello fro GO</p>
-}
-
 type Anwser struct {
 	Ok      bool
 	Content string
@@ -302,5 +298,55 @@ templ KalibrungFeedback() {
 				class="btn btn-primary w-full"
 			>Jetzt mit dem Lernen beginnen!</a>
 		</div>
+	</div>
+}
+
+templ AISetting() {
+	<div class="glass bg-base-100/80 rounded-box p-2">
+		<fieldset class="fieldset flex flex-col bg-base-100/95 border-base-300 rounded-box shadow p-4 gap-4">
+			<legend class="fieldset-legend">Kalibrierung</legend>
+			<div class="flex flex-col gap-4">
+				<label class="label">
+					Text Anteil
+					<span class="iconify tabler--info-circle"></span>
+				</label>
+				<input type="range" min="0" max="100" value="25" class="range  w-full range-xs" step="10"/>
+			</div>
+			<div class="flex flex-col gap-4">
+				<label class="label">
+					Bild Anteil
+					<span class="iconify tabler--info-circle"></span>
+				</label>
+				<input type="range" min="0" max="100" value="25" class="range w-full range-xs" step="10"/>
+			</div>
+			<div class="flex flex-col gap-4">
+				<label class="label">
+					Multiple choice Anteil
+					<span class="iconify tabler--info-circle"></span>
+				</label>
+				<input type="range" min="0" max="100" value="25" class="range  w-full range-xs" step="10"/>
+			</div>
+			<div class="flex flex-col gap-4">
+				<label class="label">
+					Code Anteil
+					<span class="iconify tabler--info-circle"></span>
+				</label>
+				<input type="range" min="0" max="100" value="25" class="range  w-full range-xs" step="10"/>
+			</div>
+			<div class="flex flex-col gap-4">
+				<label class="label">
+					Text Fragen Anteil
+					<span class="iconify tabler--info-circle"></span>
+				</label>
+				<input type="range" min="0" max="100" value="25" class="range  w-full range-xs" step="10"/>
+			</div>
+			<div class="flex flex-col gap-4">
+				<label class="label">
+					Lücken Text Anteil
+					<span class="iconify tabler--info-circle"></span>
+				</label>
+				<input type="range" min="0" max="100" value="25" class="range  w-full range-xs" step="10"/>
+			</div>
+		</fieldset>
 	</div>
 }

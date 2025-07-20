@@ -322,7 +322,7 @@ func main() {
 	})
 
 	log.Println("Starting Server at :8080")
-	router.Handle("/tmpl", templ.Handler(template.Test()))
+	router.Handle("/ai-settings", templ.Handler(template.AISetting()))
 	router.HandleFunc("/feedback", func(w http.ResponseWriter, r *http.Request) {
 		if currentQuiz == "" {
 			w.Header().Add("Hx-Redirect", "/dashboard.html")
