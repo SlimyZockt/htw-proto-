@@ -16,37 +16,64 @@ const PORT = ":8080"
 
 var courses = []template.Course{
 	{
-		Name: "intro",
+		Name: "prog2",
 		QuizPages: []template.MCTask{
 			{
+				Question: "Was ist eine Variable in der Programmierung?",
 				Awnsers: []template.Anwser{
-					{Ok: false, Content: "f'(x) = x"},
-					{Ok: true, Content: "f'(x) = 2x"},
-					{Ok: false, Content: "f'(x) = x²"},
-					{Ok: false, Content: "f'(x) = 2"},
+					{Ok: true, Content: "Ein Speicherplatz für einen veränderbaren Wert."},
+					{Ok: false, Content: "Ein fester Wert, der sich nie ändert."},
+					{Ok: false, Content: "Eine Schleife, die endlos läuft."},
+					{Ok: false, Content: "Ein Fehler im Programm."},
 				},
-				Question: "Was ist die Ableitung von f(x) = x²?",
 			},
 			{
+				Question: "Welche Schleife gibt es in Go?",
 				Awnsers: []template.Anwser{
-					{Ok: false, Content: "O(1)"},
-					{Ok: false, Content: "O(n)"},
-					{Ok: false, Content: "O(log n)"},
-					{Ok: false, Content: "O(n²)"},
+					{Ok: true, Content: "for"},
+					{Ok: false, Content: "while"},
+					{Ok: false, Content: "foreach"},
+					{Ok: false, Content: "loop"},
 				},
-				Question: "Was ist die Zeitkomplexität einer linearen Suche?",
 			},
 		},
 		CodePages: []template.CodeTask{
 			{
-				Question: "Implementiere Merge sort in JavaScript.",
+				Question: "Schreibe ein Java-Programm, das 'Hello, World!' ausgibt.",
 			},
 		},
-		LernPages: []template.LernTask{},
+		LernPages: []template.LernTask{
+			{
+				Title:  "Was ist eine Funktion?",
+				Layout: template.LayoutImgWithText,
+			},
+		},
+		GapTextPages: []template.GapTextTask{
+			{
+				Question: "In Java wird eine Funktion mit dem Schlüsselwort ___ definiert.",
+				Paragraph: []template.Paragraph{
+					{
+						Text:    "In Go wird eine Funktion mit dem Schlüsselwort  ",
+						Anwsers: []string{"func", "void", "def"},
+					},
+					{
+						Text:    "definiert",
+						Anwsers: nil,
+					},
+				},
+			},
+		},
+		TextPages: []template.TextTask{
+			{
+				Question: "Erläutre den Unterschied von Methoden und Funktionen.",
+			},
+		},
 		Pages: []template.CoursePageType{
-			template.PageQuiz,
-			template.PageQuiz,
+			template.PageLern,
 			template.PageCode,
+			template.PageGapText,
+			template.PageQuiz,
+			template.PageText,
 		},
 	},
 	{

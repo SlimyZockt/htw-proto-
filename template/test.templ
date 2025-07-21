@@ -25,6 +25,17 @@ type LernTask struct {
 	Layout LernLayout
 }
 
+type Paragraph struct {
+	Text    string
+	Anwsers []string
+}
+
+type GapTextTask struct {
+	Question  string
+	Text      []string
+	Paragraph []Paragraph
+}
+
 type LernLayout int
 
 const (
@@ -40,16 +51,18 @@ const (
 	PageCode
 	PageLern
 	PageText
+	PageGapText
 )
 
 type Course struct {
-	Name      string
-	QuizPages []MCTask
-	LernPages []LernTask
-	CodePages []CodeTask
-	TextPages []TextTask
-	Pages     []CoursePageType
-	Progress  int
+	Name         string
+	QuizPages    []MCTask
+	LernPages    []LernTask
+	CodePages    []CodeTask
+	TextPages    []TextTask
+	GapTextPages []GapTextTask
+	Pages        []CoursePageType
+	Progress     int
 }
 
 func get_pages_count(pages []CoursePageType, target CoursePageType) int {
@@ -75,6 +88,8 @@ templ RenderPage(c *Course) {
 			@c.Lern()
 		case PageText:
 			@c.Text()
+		case PageGapText:
+			@c.GapText()
 		default:
 			<span>Error 404 </span>
 	}
@@ -121,6 +136,40 @@ templ Header() {
 			</div>
 		</div>
 	</header>
+}
+
+templ (c *Course) GapText() {
+	{{ id := get_pages_count(c.Pages[:c.Progress], PageGapText) }}
+	<div class="card-body grow" id="quiz">
+		<div class="card-title justify-between">
+			<h2>
+				Füllen Sie den Lückentext aus.
+			</h2>
+			<span class="min-w-fit">
+				{ c.Progress + 1 } / { len(c.Pages) }
+			</span>
+		</div>
+		<div class="flex flex-col grow gap-2">
+			<div class="flex flex-row gap-2 items-center">
+				for _, p := range c.GapTextPages[id].Paragraph {
+					<span class="">
+						{ p.Text }
+					</span>
+					if p.Anwsers != nil {
+						<select class="select">
+							<option selected></option>
+							for _, a := range p.Anwsers {
+								<option>{ a }</option>
+							}
+						</select>
+					}
+				}
+			</div>
+		</div>
+		<div class="card-actions justify-end">
+			@c.Control()
+		</div>
+	</div>
 }
 
 templ (c *Course) Lern() {
@@ -346,7 +395,7 @@ templ KalibrungFeedback() {
 templ AISetting() {
 	<div class="glass bg-base-100/80 rounded-box p-2">
 		<fieldset class="fieldset flex flex-col bg-base-100/95 border-base-300 rounded-box shadow p-4 gap-4">
-			<legend class="fieldset-legend">Kalibrierung</legend>
+			<legend class="fieldset-legend">AI Kalibrierung</legend>
 			<div class="flex flex-col gap-4">
 				<label class="label">
 					Text Anteil

@@ -14,10 +14,71 @@
 
 
     <div class="flex justify-center p-4 gap-4 grow">
-        <div class="card card-border w-96 glass grow shadow justify-between" hx-swap="innerHTML" hx-get="feedback"
-            hx-trigger="load">
+        <div class="card card-border glass grow shadow justify-between p-4">
+            <h1 class="card-title">Neuen Kurs erstellen</h1>
+            <div class="card-title flex-col">
+                <fieldset class="fieldset  rounded-box w-full p-4 flex flex-col gap-4">
+                    <label class="label">Beschreibung</label>
+                    <textarea name="" id="" cols="30" rows="10" class="textarea resize-none glass w-full"></textarea>
+
+                    <div class="flex flex-col gap-4">
+                        <label class="label">
+                            Text Anteil
+                            <span class="iconify tabler--info-circle"></span>
+                        </label>
+                        <input type="range" min="0" max="100" value="25" class="range range-primary  w-full range-xs"
+                            step="10" />
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <label class="label">
+                            Bild Anteil
+                            <span class="iconify tabler--info-circle"></span>
+                        </label>
+                        <input type="range" min="0" max="100" value="25" class="range range-primary w-full range-xs"
+                            step="10" />
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <label class="label">
+                            Multiple choice Anteil
+                            <span class="iconify tabler--info-circle"></span>
+                        </label>
+                        <input type="range" min="0" max="100" value="25" class="range range-primary  w-full range-xs"
+                            step="10" />
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <label class="label">
+                            Code Anteil
+                            <span class="iconify tabler--info-circle"></span>
+                        </label>
+                        <input type="range" min="0" max="100" value="25" class="range range-primary w-full range-xs"
+                            step="10" />
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <label class="label">
+                            Text Fragen Anteil
+                            <span class="iconify tabler--info-circle"></span>
+                        </label>
+                        <input type="range" min="0" max="100" value="25" class="range range-primary w-full range-xs"
+                            step="10" />
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <label class="label">
+                            Lücken Text Anteil
+                            <span class="iconify tabler--info-circle"></span>
+                        </label>
+                        <input type="range" min="0" max="100" value="25" class="range range-primary  w-full range-xs"
+                            step="10" />
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="card-actions flex-row-reverse">
+                <a href="dashboard.html" class="btn btn-primary">Erstellen</a>
+                <a href="dashboard.html" class="btn glass">Abbrechen</a>
+            </div>
         </div>
     </div>
+
 
 
 </body>

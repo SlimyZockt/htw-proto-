@@ -51,11 +51,11 @@
         <div class="rounded gap-4 p-4 flex flex-col glass shadow ">
             <div class="flex flex-row justify-between">
                 <h2 class="font-semibold text-xl"> Kurse</h2>
-                <button class="btn btn-ghost glass shadow">
+                <a class="btn btn-ghost glass shadow" href="new_course.html">
                     <span class="iconify tabler--plus"></span>
                     Kurs erstellen
 
-                </button>
+                </a>
             </div>
             <fieldset class="fieldset flex p-4 shadow grow">
                 <legend class="fieldset-legend">Suche</legend>
@@ -136,6 +136,38 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="list-row flex flex-col">
+                    <div class="flex flex-row justify-between">
+                        <span class="text-lg font-semibold">Angewandte Programmierung</span>
+                        <details class="dropdown dropdown-end flex flex-col">
+                            <summary role="button" class="btn btn-ghost">
+                                <span class="iconify tabler--settings-bolt"></span>
+                            </summary>
+
+                            <div class="dropdown-content h-full max-w-2xl">
+                                <div hx-get="/ai-settings" hx-swap="outerHTML" hx-trigger="load">
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                    <ul class="flex flex-col gap-4">
+                        <li>
+                            <div class="flex items-center justify-between grow">
+
+                                <div class="flex flex-col">
+                                    <span>Wiederholung</span>
+                                    <span class="font-light italic text-xs">0%</span>
+                                </div>
+                                <button class="btn btn-primary" hx-get="/ubung/prog2/0" hx-swap="none">
+                                    Start
+                                </button>
+                            </div>
+                            <progress class="progress progress-primary" value="0" max="100"></progress>
+                        </li>
+                    </ul>
+                </li>
+
                 <li class="list-row flex flex-col">
                     <div class="flex flex-row justify-between">
                         <span class="text-lg font-semibold">Geschäftsprozesse und betriebliche Anwendungen</span>
