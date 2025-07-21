@@ -82,6 +82,17 @@ templ RenderPage(c *Course) {
 
 templ Header() {
 	<header class="navbar glass shadow z-10">
+		<script>
+		let isdark = JSON.parse(localStorage.getItem('isdark'));
+
+		const darkCheck = document.getElementById("toggledark");
+		darkCheck.checked = isdark;
+		function toggleDarkmode() {
+			isdark = !isdark;
+			console.log(isdark);
+			localStorage.setItem('isdark', JSON.stringify(isdark));
+		}
+	</script>
 		<div class="flex-1">
 			<a class="btn btn-ghost text-xl" href="dashboard.html">HTW Lern</a>
 		</div>
@@ -100,7 +111,7 @@ templ Header() {
 					<li><a class="btn ">Einstellungen</a></li>
 					<li>
 						<label class="btn  grow swap">
-							<input type="checkbox" value="htw-dark" class="theme-controller"/>
+							<input type="checkbox" onclick="toggleDarkmode()" id="toggledark" value="htw-dark" class="theme-controller"/>
 							<span class="swap-on iconify tabler--sun"></span>
 							<div class="swap-off iconify tabler--moon"></div>
 						</label>
