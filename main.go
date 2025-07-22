@@ -57,7 +57,15 @@ var courses = []template.Course{
 						Anwsers: []string{"func", "void", "def"},
 					},
 					{
-						Text:    "definiert",
+						Text:    "definiert.",
+						Anwsers: nil,
+					},
+					{
+						Text:    "Das Ergebnis einer Funktion wird mit dem Schlüsselwort ",
+						Anwsers: []string{"return", "output", "print"},
+					},
+					{
+						Text:    "zurückgegeben.",
 						Anwsers: nil,
 					},
 				},

@@ -149,12 +149,10 @@ templ (c *Course) GapText() {
 				{ c.Progress + 1 } / { len(c.Pages) }
 			</span>
 		</div>
-		<div class="flex flex-col grow gap-2">
-			<div class="flex flex-row gap-2 items-center">
+		<div class=" grow">
+			<p>
 				for _, p := range c.GapTextPages[id].Paragraph {
-					<span class="">
-						{ p.Text }
-					</span>
+					{ p.Text }
 					if p.Anwsers != nil {
 						<select class="select">
 							<option selected></option>
@@ -164,7 +162,8 @@ templ (c *Course) GapText() {
 						</select>
 					}
 				}
-			</div>
+				<span></span>
+			</p>
 		</div>
 		<div class="card-actions justify-end">
 			@c.Control()
@@ -174,6 +173,12 @@ templ (c *Course) GapText() {
 
 templ (c *Course) Lern() {
 	{{ id := get_pages_count(c.Pages[:c.Progress], PageLern) }}
+	<style>
+		.pattern {
+			background-color: #DFDBE5;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cg fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/%3E%3C/g%3E%3C/svg%3E");
+		}
+	</style>
 	<div class="card-body grow gap-4" id="quiz">
 		<div class="card-title justify-between">
 			<h2>
@@ -190,8 +195,8 @@ templ (c *Course) Lern() {
 		</div>
 		switch c.LernPages[id].Layout {
 			case LayoutImgWithText:
-				<div class="grow flex flex-col gap-4">
-					<img src="https://placehold.co/1800x800" alt=""/>
+				<div class="grow flex flex-col gap-4 ">
+					<div class="pattern w-full h-80 rounded"></div>
 					<p>
 						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 					</p>
@@ -199,8 +204,8 @@ templ (c *Course) Lern() {
 			case LayoutTwoImagesSomeText:
 				<div class="grow flex flex-col gap-4">
 					<div class="flex flex-row gap-4 justify-between">
-						<img src="https://placehold.co/420x200" alt=""/>
-						<img src="https://placehold.co/420x200" alt=""/>
+						<div class="pattern w-full h-80 rounded"></div>
+						<div class="pattern w-full h-80 rounded"></div>
 					</div>
 					<p>
 						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
